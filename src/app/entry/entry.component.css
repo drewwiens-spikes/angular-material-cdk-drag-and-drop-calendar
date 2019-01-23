@@ -1,7 +1,22 @@
+:host {
+  display: block;
+}
+
 .badge {
   width: 100%;
-  margin: 0 0 5px 0;
+  margin: 0;
+  padding-left: 7px;
+  text-align: left;
+  display: block;
+  line-height: 24px;
 }
-/* clr-textarea-container > div.clr-control-container, clr-textarea-container > div.clr-control-container > textarea {
-  width: 100%;
-} */
+
+textarea {
+  padding: 5px;
+}
+
+clr-icon {
+  float: right;
+  margin-top: 4px;
+  /* visibility: hidden; */
+}

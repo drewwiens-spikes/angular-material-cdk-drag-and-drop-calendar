@@ -1,9 +1,39 @@
 :host {
   display: block;
+  height: 100%;
 }
+
 table {
   table-layout: fixed;
+  margin: 0;
+  height: 100%;
 }
+
 .hour-col {
-  width: 75px;
+  width: 100px;
+}
+
+td {
+  padding: 3px !important;
+  padding-bottom: 20px !important;
+}
+
+tr {
+  height: 200px;
+}
+
+tr:first-child > th {
+  text-align: center;
+}
+
+td:not(:last-child), th:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+tr:first-child {
+  height: 20px;
+}
+
+app-entry {
+  margin-bottom: 3px;
 }

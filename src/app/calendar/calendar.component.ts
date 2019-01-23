@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { range, flatten, without } from 'lodash';
+import { range, flatten, without, pull } from 'lodash';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-calendar',
@@ -12,7 +13,7 @@ export class CalendarComponent {
   days = range(7); // [0...6]
 
   ids: string[][]; // arr[4][10] = '4-10' (Friday 10am)
-  entries: string[][][]; // The text of each calendar item
+  controls: FormControl[][][]; // The state of each calendar item
   connections: string[][][]; // arr[day][hour] = [...ids of the other drop sites]
 
   constructor() {
@@ -28,7 +29,7 @@ export class CalendarComponent {
     );
 
     // Start with no items in the calendar:
-    this.entries = this.ids.map(day => day.map(() => []));
+    this.controls = this.ids.map(day => day.map(() => []));
 
     // arr[day][hour] --> arr[i]:
     const flatList = flatten(this.ids);
@@ -42,7 +43,11 @@ export class CalendarComponent {
   }
 
   newEntry(day: number, hour: number) {
-    this.entries[day][hour].push('');
+    this.controls[day][hour].push(new FormControl(''));
+  }
+
+  deleteEntry(day: number, hour: number, control: FormControl) {
+    pull(this.controls[day][hour], control);
   }
 
 }

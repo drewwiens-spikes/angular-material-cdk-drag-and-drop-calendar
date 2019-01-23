@@ -1,3 +1,16 @@
-<div class="badge" (click)="selected = true" *ngIf="!selected">
+<div
+  class="badge"
+  (click)="setSelected(true)"
+  *ngIf="!selected"
+>
+  {{control.value}}
+  <clr-icon shape="bars"></clr-icon>
 </div>
-<textarea *ngIf="selected">{{contents}}</textarea>
+
+<textarea
+  #textArea
+  *ngIf="selected"
+  [formControl]="control"
+  (keypress)="checkEnter($event)"
+  (blur)="setSelected(false)"
+></textarea>

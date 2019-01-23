@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EntryComponent } from './entry/entry.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     ClarityModule,
     BrowserAnimationsModule,
     DragDropModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

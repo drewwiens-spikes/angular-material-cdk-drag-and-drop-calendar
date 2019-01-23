@@ -15,6 +15,7 @@
       class="dropdown-item"
       (blur)="toggleDropdown(false)"
       (mousedown)="changed.next('')"
+      (mousedown)="toggleDropdown(false)"
     >Grey</button>
     <button type="button" class="dropdown-item" (mousedown)="changed.next('red')">Red</button>
     <button type="button" class="dropdown-item" (mousedown)="changed.next('blue')">Blue</button>

@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+table {
+  table-layout: fixed;
+}
+.hour-col {
+  width: 75px;
+}

@@ -1,0 +1,32 @@
+<table class="table table-vertical table-compact">
+  <tbody>
+    <tr>
+      <th class="hour-col">&nbsp;</th>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </tr>
+    <tr *ngFor="let hour of hours">
+      <th>{{hour}}:00</th>
+      <td
+        *ngFor="let day of days"
+        cdkDropList
+        #hourSlot
+        [id]="ids[day][hour]"
+        [cdkDropListConnectedTo]="connections[day][hour]"
+      >
+        <app-entry
+          cdkDrag
+          cdkDragHandle
+          *ngFor="let entry of entries[day][hour]"
+          [contents]="entry"
+        >DragItem</app-entry>
+        <div (click)="newEntry(day, hour)">&nbsp;</div>
+      </td>
+    </tr>
+  </tbody>
+</table>

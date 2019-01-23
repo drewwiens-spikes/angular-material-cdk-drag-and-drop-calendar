@@ -292,6 +292,28 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@clr/angular@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-1.0.4.tgz#bec9e8e27c73de5674089535cd2bcf6a1df65e0d"
+  integrity sha512-ikvfsgJACuqerRzU92LFx1eD63v24BhKJETpqQaLZvqZvDAdilIBq5fVOmhfzqyiFjO38zlweYhBJ7k99IAGjg==
+  dependencies:
+    tslib "^1.9.0"
+
+"@clr/icons@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@clr/icons/-/icons-1.0.4.tgz#40890e9cabe2ed68ba80735c8455a8514ac3f698"
+  integrity sha512-H+U+ScjCRbmE00hkCF/8Q43e/QHUrK+0ubMMAa82zwN8cmg4L8PsPEJsRSctlCeokeQ+kxADS0ZGqRIjoB/+cw==
+
+"@clr/ui@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-1.0.4.tgz#fc8c8c8a5e00f36a0b9331cbb312ad76a157d2ea"
+  integrity sha512-OAB4K7CQ/NXsiJB8q5Jj4xyHKIHDYjgy/8C6mjdgx4dTsiLb649ma7wBOh6uy83gCnEJmFJ6Og3jL3NyEkFpFA==
+
+"@ngrx/store@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-7.1.0.tgz#072f22e062e264c62859f37d9807dfac860f161d"
+  integrity sha512-tM8ZGxbLTyQ5JUHow3/PSFU3FWfYJs/wAVyRlxzTxfY7Krs/TJ64GgI4lOa6gVizi2UiYfLtI31pJrxzXyxEoA==
+
 "@ngtools/webpack@7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-7.2.2.tgz#361d877f01feae800a58901b066b46539e1fe0e3"
@@ -519,6 +541,11 @@
     "@webassemblyjs/ast" "1.7.11"
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
+
+"@webcomponents/custom-elements@^1.0.0":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@webcomponents/custom-elements/-/custom-elements-1.2.1.tgz#0b9c8d06c6d8f059752ff389a6e4418f393338e7"
+  integrity sha512-flmTp4rVbBkcUIF3eBO3LNoAaYvleTdhPZKzdzr6iztWLLrxCctcK+7MAQeC3/SPjc3JDdC3jYLMRF4R6C3f9g==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

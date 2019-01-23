@@ -18,17 +18,18 @@
         #hourSlot
         [id]="ids[day][hour]"
         [cdkDropListConnectedTo]="connections[day][hour]"
+        [cdkDropListData]="entryState[day][hour]"
         (click)="newEntry(day, hour)"
+        (cdkDropListDropped)="drop($event)"
       >
         <app-entry
           cdkDrag
           cdkDragHandle
-          *ngFor="let state of controls[day][hour]"
-          [control]="state"
+          *ngFor="let state of entryState[day][hour]"
+          [state]="state"
           (deleteMe)="deleteEntry(day, hour, state)"
           (click)="($event).stopPropagation()"
         >DragItem</app-entry>
-        <!-- <div (click)="newEntry(day, hour)">&nbsp;</div> -->
       </td>
     </tr>
   </tbody>

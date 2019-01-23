@@ -19,11 +19,13 @@ td {
 }
 
 tr {
-  height: 200px;
+  height: 150px;
 }
 
 tr:first-child > th {
   text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 td:not(:last-child), th:not(:last-child) {

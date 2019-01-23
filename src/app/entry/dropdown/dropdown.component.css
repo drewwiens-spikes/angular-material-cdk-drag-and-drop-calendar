@@ -1,0 +1,7 @@
+clr-icon {
+  opacity: 0;
+}
+
+clr-icon:hover {
+  opacity: 1;
+}

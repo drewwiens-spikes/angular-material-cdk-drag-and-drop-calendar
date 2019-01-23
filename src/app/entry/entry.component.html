@@ -2,9 +2,10 @@
   class="badge"
   (click)="setSelected(true)"
   *ngIf="!selected"
+  [ngClass]="color"
 >
   {{control.value}}
-  <clr-icon shape="bars"></clr-icon>
+  <app-dropdown (changed)="color = $event"></app-dropdown>
 </div>
 
 <textarea

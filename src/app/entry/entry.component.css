@@ -15,8 +15,6 @@ textarea {
   padding: 5px;
 }
 
-clr-icon {
+app-dropdown {
   float: right;
-  margin-top: 4px;
-  /* visibility: hidden; */
 }

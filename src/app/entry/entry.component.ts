@@ -11,7 +11,8 @@ export class EntryComponent implements AfterViewInit {
   @Input() control: FormControl;
   @Output() deleteMe = new EventEmitter<void>();
 
-  selected: boolean;
+  selected = false;
+  color = '';
 
   constructor() { }
 

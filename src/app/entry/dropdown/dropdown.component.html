@@ -1,0 +1,28 @@
+<clr-icon
+  shape="caret down"
+  (click)="toggleDropdown(true, $event)"
+></clr-icon>
+<div
+  class="dropdown bottom-left"
+  [ngClass]="dropdownStyle()"
+  (click)="($event).stopPropagation()"
+>
+  <div class="dropdown-menu">
+    <h4 class="dropdown-header">Background color</h4>
+    <button
+      #firstButton
+      type="button"
+      class="dropdown-item"
+      (blur)="toggleDropdown(false)"
+      (mousedown)="changed.next('')"
+    >Grey</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-purple')">Purple</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-blue')">Navy blue</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-orange')">Orange</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-light-blue')">Light blue</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-info')">Blue</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-success')">Green</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-warning')">Yellow</button>
+    <button type="button" class="dropdown-item" (mousedown)="changed.next('badge-danger')">Red</button>
+  </div>
+</div>

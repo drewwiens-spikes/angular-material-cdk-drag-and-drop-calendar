@@ -2,19 +2,36 @@
   display: block;
 }
 
-.badge {
-  width: 100%;
-  margin: 0;
-  padding-left: 7px;
-  text-align: left;
-  display: block;
-  line-height: 24px;
-}
-
 textarea {
   padding: 5px;
 }
 
 app-dropdown {
   float: right;
+}
+
+div {
+  background-color: lightgray;
+  color: black;
+  padding: 3px;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.green {
+  background-color: lightgreen;
+  color: black;
 }

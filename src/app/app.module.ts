@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EntryComponent } from './entry/entry.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DropdownComponent } from './entry/dropdown/dropdown.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [

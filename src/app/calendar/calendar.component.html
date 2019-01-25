@@ -1,7 +1,12 @@
-<table class="table table-vertical table-compact">
-  <tbody>
+January 2019
+<span class="desc">
+  With Angular Material CDK Drag and Drop and VMWare Clarity |
+  <a href="https://adwiens.github.io/angular-material-cdk-drag-and-drop-playground">Angular Material CDK Drag and Drop Playground</a> |
+  <a href="https://github.com/adwiens/angular-material-cdk-drag-and-drop-calendar">Source</a>
+</span>
+<table class="table table-compact">
+  <tbody cdkDropListGroup>
     <tr>
-      <th class="hour-col">&nbsp;</th>
       <th>SUN</th>
       <th>MON</th>
       <th>TUE</th>
@@ -10,24 +15,22 @@
       <th>FRI</th>
       <th>SAT</th>
     </tr>
-    <tr *ngFor="let hour of hours">
-      <th class="hour-col">{{hour}}:00</th>
+    <tr *ngFor="let week of weeks">
       <td
+        class="left"
         *ngFor="let day of days"
         cdkDropList
-        #hourSlot
-        [id]="ids[day][hour]"
-        [cdkDropListConnectedTo]="connections[day][hour]"
-        [cdkDropListData]="entryState[day][hour]"
-        (click)="newEntry(day, hour)"
+        [cdkDropListData]="entryState[week][day]"
+        (click)="newEntry(day, week)"
         (cdkDropListDropped)="drop($event)"
       >
+        <div>{{dayLabels[week][day]}}</div>
         <app-entry
           cdkDrag
           cdkDragHandle
-          *ngFor="let state of entryState[day][hour]"
+          *ngFor="let state of entryState[week][day]"
           [state]="state"
-          (deleteMe)="deleteEntry(day, hour, state)"
+          (deleteMe)="deleteEntry(day, week, state)"
           (click)="($event).stopPropagation()"
         >DragItem</app-entry>
       </td>

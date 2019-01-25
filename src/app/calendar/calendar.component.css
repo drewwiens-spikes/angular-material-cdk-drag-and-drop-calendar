@@ -1,16 +1,13 @@
 :host {
   display: block;
   height: 100%;
+  padding: 10px;
 }
 
 table {
   table-layout: fixed;
   margin: 0;
-  height: 100%;
-}
-
-.hour-col {
-  width: 100px;
+  height: calc(100% - 62px);
 }
 
 td {
@@ -18,12 +15,11 @@ td {
   padding-bottom: 20px !important;
 }
 
-tr {
-  height: 150px;
+tr:not(:first-child) {
+  height: calc(20vh - 32px);
 }
 
 tr:first-child > th {
-  text-align: center;
   padding-left: 0;
   padding-right: 0;
 }
@@ -36,6 +32,16 @@ tr:first-child {
   height: 20px;
 }
 
-app-entry {
-  margin-bottom: 3px;
+div {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.desc {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 16px;
 }

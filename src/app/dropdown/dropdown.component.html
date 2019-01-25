@@ -3,6 +3,7 @@
   (click)="toggleDropdown(true, $event)"
 ></clr-icon>
 <div
+  *ngIf="showDropdown"
   class="dropdown bottom-left"
   [ngClass]="dropdownStyle()"
   (click)="($event).stopPropagation()"

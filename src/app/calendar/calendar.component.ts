@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { range, flatten, without, pull } from 'lodash';
+import { range, pull } from 'lodash';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
 
@@ -10,41 +10,23 @@ import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/dr
 })
 export class CalendarComponent {
 
-  hours = range(24); // [0...23]
-  days = range(7); // [0...6]
+  dayLabels = [ [30, 31,  1,  2,  3,  4,  5],
+                [ 6,  7,  8,  9, 10, 11, 12],
+                [13, 14, 15, 16, 17, 18, 19],
+                [20, 21, 22, 23, 24, 25, 26],
+                [27, 28, 29, 30, 31,  1,  2] ];
 
-  ids: string[][]; // arr[4][10] = '4-10' (Friday 10am)
+  weeks = range(5); // [0...4]
+  days = range(7); // [0...6]
   entryState: FormGroup[][][]; // The state of each calendar item
-  connections: string[][][]; // arr[day][hour] = [...ids of the other drop sites]
 
   constructor(private fb: FormBuilder) {
-    this.initConnections();
-  }
-
-  initConnections() {
-    // arr[day][hour] = '4-10' (Friday 10am):
-    this.ids = this.days.map(
-      day => this.hours.map(
-        hour => `${day}-${hour}`
-      )
-    );
-
     // Start with no items in the calendar:
-    this.entryState = this.ids.map(day => day.map(() => []));
-
-    // arr[day][hour] --> arr[i]:
-    const flatList = flatten(this.ids);
-
-    // Connect each drop site to all the others:
-    this.connections = this.ids.map(
-      day => day.map(
-        id => without(flatList, id)
-      )
-    );
+    this.entryState = this.dayLabels.map(week => week.map(() => []));
   }
 
-  newEntry(day: number, hour: number) {
-    this.entryState[day][hour].push(
+  newEntry(day: number, week: number) {
+    this.entryState[week][day].push(
       this.fb.group({
         text: [''],
         color: [''],
@@ -52,8 +34,8 @@ export class CalendarComponent {
     );
   }
 
-  deleteEntry(day: number, hour: number, control: FormControl) {
-    pull(this.entryState[day][hour], control);
+  deleteEntry(day: number, week: number, control: FormControl) {
+    pull(this.entryState[week][day], control);
   }
 
   drop(event: CdkDragDrop<string[]>) {
